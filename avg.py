@@ -9,7 +9,7 @@ def getoutliers(y):   #define a function that can get the outliers in streaming
     numerics = map(lambda string:float(string),y)   #put every element of list into numerics
     mean = numpy.mean(numerics)     #get mean 
     stddev = numpy.std(numerics)    #get standard deviation
-    outliers = filter(lambda x:numpy.absolute(x - mean)>2 * stddev,numerics)  # obtain outliers which are more than
+    outliers = filter(lambda x:(mean-x)>2 * stddev,numerics)  # obtain outliers which are more than
     
     return outliers                                                            # 2 standard deviations through filter function
     sys.stdout.flush()    #flush ouput buffer
