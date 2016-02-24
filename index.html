@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>websocketd follow official account example</title>   <!--This is the title of the webpage-->
+
+    <style>
+      #count {
+        font: bold 80px arial;    
+        margin: auto;     
+        padding: 10px;
+        text-align: center;
+      }
+    </style>  <!-- set the font as arial and bold, size is 80px, margin is auto and padding is 10px-->
+  </head>     <!-- text align way is centered -->
+  <body>
+
+    <div id="count"></div>
+
+    <script>
+      var ws = new WebSocket('ws://localhost:8080/');   
+      ws.onopen = function() {
+        document.body.style.backgroundColor = '#cfc';
+      };
+      ws.onclose = function() {
+        document.body.style.backgroundColor = null;
+      };
+      ws.onmessage = function(event) {
+        document.getElementById('count').textContent = event.data;  
+      };
+    </script>  <!-- upload printout data to webpage as textcontent-->
+    			<!-- set the webpage background color to green-->
+    			<!-- and when closed, the color will be null, which shows white -->
+
+  </body>
+</html>
