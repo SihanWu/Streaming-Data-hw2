@@ -11,7 +11,7 @@ def getoutliers(y):   #define a function that can get the outliers in streaming
     stddev = numpy.std(numerics)    #get standard deviation
     outliers = filter(lambda x:(mean-x)>2 * stddev,numerics)  # obtain outliers which are more than
     
-    return outliers                                                            # 2 standard deviations through filter function
+    return outliers                                           # 2 standard deviations through filter function
     sys.stdout.flush()    #flush ouput buffer
 
 while 1:
