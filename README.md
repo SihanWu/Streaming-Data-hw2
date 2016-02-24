@@ -16,7 +16,7 @@ more than two standard deviations difference from the mean of time interval. The
 means these five official accounts interact with followers more frequently or their companies release some new products 
 or announcements.
 
-Making them readable:
+#Making them readable:
 
 Inspried by the knowledge we learned in the first class, i decided to use websocket to show my result, and when we have 
 alerts, the webpage will have alert information instead of normal rate information.
