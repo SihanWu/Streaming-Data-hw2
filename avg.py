@@ -3,6 +3,7 @@ import json
 import time
 import sys
 import numpy  #import kinds of libraries we need
+from sys import stdout
 
 conn = redis.Redis()    #create connection
 def getoutliers(y):   #define a function that can get the outliers in streaming
@@ -36,11 +37,12 @@ while 1:
         
         if s!=[]:   #if s isn't empty, then print s is a time interval which is more than 2 standard deviations
              print "%f is a time interval which is more than 2 standard deviations"%s
+             stdout.flush()
         time.sleep(5) #when we have alerts, sleep 5 seconds so that we can observe them clearly
     else:
         rate = 0
 
     print json.dumps({"rate":rate})
-
+    stdout.flush()
     time.sleep(2)
 
